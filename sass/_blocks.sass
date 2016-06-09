@@ -1,0 +1,620 @@
+%bszbb
+	@include box-sizing(border-box)
+
+
+/* clearfix
+/* --------------------------------------------- */
+
+
+%clear
+	&:before,
+	&:after
+		display: table
+		content: ''
+		clear: both
+	&:after
+		clear: both
+
+.clearfix-block
+	clear: both
+	overflow: hidden
+	margin: 0
+	padding: 0
+	font-size: 0
+	line-height: 0
+
+.clearfix 
+	&:before,
+	&:after
+		display: table
+		content: ''
+		clear: both
+	&:after
+		clear: both
+
+
+/* clearfix
+/* ---------------------------------------END--- */
+
+%center
+	max-width: $page_w
+	margin: auto
+
+%space
+	@extend %bszbb
+	padding-left: $page_space
+	padding-right: $page_space
+	+max-screen($mq_sm)
+		padding-left: $page_space_sm
+		padding-right: $page_space_sm
+
+
+/* page
+/* --------------------------------------------- */
+
+.page
+	//padding-top: $header_h
+	position: relative
+
+	&__header
+		
+
+	&__body
+		
+
+	&__section
+		@extend %center
+		@extend %space
+
+	&__bg-section
+		height: 360px
+		background-attachment: fixed
+		background-size: cover
+		background-position: center center
+
+		width: 100%
+		max-width: 1920px
+		height: 0
+		padding-top: ((360/1280)* 100%)
+		+min-screen($page_w_big)
+			padding-top: 0
+			height: 360px
+		+max-screen($mq_sm)
+			height: 192px
+			padding-top: 0
+		+max-screen($mq_smr)
+			height: 150px
+			padding-top: 0
+
+
+	&__footer
+		position: relative
+		//background: #f1acf2
+
+	
+/* page
+/* ---------------------------------------END--- */
+
+
+/* header
+/* --------------------------------------------- */
+
+.header
+	position: fixed
+	right: 0
+	left: 0
+	top: 0
+	z-index: 200
+	//background: #adf785
+	+transition-duration(.3s)
+	+transition-property(box-shadow)
+	&.is-scrolled
+		+box-shadow(0 0 15px rgba(#000, .6))
+
+	&__body
+		position: relative
+		
+	&__in
+		position: relative
+		height: $header_h
+		@extend %bszbb
+
+
+
+/* header
+/* ---------------------------------------END--- */
+
+
+/* txt-center
+/* --------------------------------------------- */
+
+.txt-center
+	text-align: center
+
+/* txt-center
+/* ---------------------------------------END--- */
+
+
+/* footer
+/* --------------------------------------------- */
+
+.footer
+	border-bottom: 4px solid $main_color_dark
+	&__body
+		@extend %center
+		@extend %space
+		display: table
+		width: 100%
+		+max-screen($mq_sm)
+			display: block
+			text-align: center
+			padding-top: 10px
+
+	&__i
+		height: 68px
+		display: table-cell
+		vertical-align: middle
+		text-align: center
+		&:first-child
+			text-align: left
+		&:last-child
+			text-align: right
+		+max-screen($mq_sm)
+			margin: 0 5px
+			display: inline-block
+			height: auto
+
+		&_made-by
+
+		&_vk
+			+max-screen($mq_sm)
+				padding: 10px
+				display: block
+				text-align: center !important
+
+	&__location-icon
+		top: -2px
+		margin-right: 5px
+
+	&__phone-icon
+		top: -1px
+		margin-right: 5px
+
+	&__mail-icon
+		margin-right: 5px
+
+	
+		
+			
+
+/* footer
+/* ---------------------------------------END--- */
+
+
+/* input
+/* --------------------------------------------- */
+
+.input
+	width: 200px
+	height: 56px
+	background: #fff
+	color: $text_color
+	padding: 0 28px
+	+rem(font-size, 16px)
+	@extend %bszbb
+	//+transition-property(box-shadow)
+	//+transition-duration(0.3s)
+	border: 2px solid #5aafc6
+	+transition-duration(.1s)
+	+transition-property(border-color)
+
+	&_w_fluid
+		width: 100%
+
+	&_error
+		border-color: $color_imp
+
+	&:focus
+		outline: 0 !important
+		//+box-shadow(0 0 10px rgba($focus_color, 1))
+
+/* input
+/* ---------------------------------------END--- */
+
+
+
+/* button
+/* --------------------------------------------- */
+
+.button
+	$button_h: 73px
+	$button_h_sm: 60px
+
+	-webkit-touch-callout: none
+	-webkit-user-select: none
+	-khtml-user-select: none
+	-moz-user-select: none
+	-ms-user-select: none
+	user-select: none
+
+	position: relative
+	display: inline-block
+	overflow: visible
+	border: none
+	color: #fff !important
+	text-align: center
+	text-decoration: none
+	cursor: pointer
+	vertical-align: middle
+	outline: none
+	+rem(font-size, 20px)
+	text-transform: uppercase
+	padding: 0 50px
+	white-space: nowrap
+	height: $button_h
+	line-height: $button_h - 7
+	font-weight: bold
+	background-color: $main_color_dark
+	border: 5px solid $main_color
+	border-radius: 34px
+	@extend %bszbb
+	+transition-duration(.9s)
+	+transition-property(background-color, color)
+	+max-screen($mq_sm)
+		height: $button_h_sm
+		line-height: $button_h_sm - 7
+		+rem(font-size, 17px)
+	
+	&:hover
+		background-color: $main_color
+		+transition-duration(.4s)
+
+	&_color_important
+		border: 5px solid $color_imp_dark
+		background: $color_imp
+		
+		&:hover
+			background: $color_imp_dark !important
+
+	&:active
+		+box-shadow(inset 0px 3px 7px rgba(#000, .2))
+		line-height: $button_h + 2
+		+max-screen($mq_sm)
+			line-height: $button_h_sm + 2
+	
+
+/* button
+/* ---------------------------------------END--- */
+
+
+/* main-nav
+/* --------------------------------------------- */
+
+.main-nav
+	@extend %clear
+	@extend %space
+	text-align: center
+	position: relative
+	text-align: center
+
+	&:before
+		display: block
+		content: ''
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		background: rgba($main_color, .75)
+
+	// animation only when clicking navigate button
+	// not when the window reiszes
+	&.is-animate
+		+transition-property(opacity, visibility, margin-right)
+		+transition-timing-function()
+		+transition-duration(.5s)
+
+	+max-screen($mq_m_menu)
+		display: table
+		text-align: center
+		vertical-align: middle
+		position: fixed
+		top: 0
+		width: 100%
+		right: 0
+		height: 100vh
+		margin-right: 100%
+		visibility: hidden
+		+opacity(0)
+
+		&.is-open
+			+max-screen($mq_m_menu)
+				visibility: visible
+				margin-right: 0
+				+opacity(1)
+				+transition-duration(.7s)
+				+transition-property(opacity, visibility, margin-right)
+				+transition-timing-function(cubic-bezier(0.075, 0.82, 0.165, 1))
+
+
+	&__body
+		@extend %center
+		+max-screen($mq_m_menu)
+			position: relative
+			z-index: 2
+			display: table-cell
+			vertical-align: middle
+
+	&__lst
+		margin: 0
+		padding: 0
+		list-style-type: none
+		position: relative
+		z-index: 1
+		+rem(font-size, 20px)
+		text-transform: uppercase
+		display: table
+		+max-screen($mq_d_menu)
+			+rem(font-size, 17px)
+
+		+max-screen($mq_m_menu)
+			display: inline-block
+			width: 100%
+			+rem(font-size, 25px)
+		+max-screen($mq_sm_menu)
+			+rem(font-size, 20px)
+		
+	&__i
+		margin: 0
+		padding: 0
+		display: table-cell
+		text-align: center
+		+max-screen($mq_m_menu)
+			display: block
+
+	&__a
+		display: block
+		+link-color ($color: #fff, $color_visited: none)
+		border-bottom: none
+		padding: 4px 15px
+		+transition-property(background, color)
+		+max-screen($mq_d_menu)
+			padding: 7px 15px
+		+max-screen($mq_m_menu)
+			line-height: 1
+			padding: 15px
+			color: #fff !important
+
+		.is-active > &
+			background: $color_imp
+			color: #fff
+			+max-screen($mq_m_menu)
+				background: none
+				+opacity(.4)
+
+		&:hover
+
+			+max-screen($mq_m_menu)
+				color: #fff
+				background: $main_color
+
+
+/* main-nav
+/* ---------------------------------------END--- */
+
+
+/* nav-control
+/* --------------------------------------------- */
+
+.nav-control
+	display: none
+	position: absolute
+	z-index: 2
+	top: 34px
+	right: 10px
+	width: $navigation_h_sm
+	height: $navigation_h_sm
+	//background: yellow
+	cursor: pointer
+	+max-screen($mq_m_menu)
+		display: block
+		top: 2px
+	+max-screen($mq_sm)
+		top: 2px
+		
+
+	&.is-open
+		position: fixed
+		top: 34px
+		z-index: 100
+		+max-screen($mq_m_menu)
+			top: 2px
+		+max-screen($mq_sm)
+			top: 2px
+
+	&__body
+		position: absolute
+		width: 38px
+		height: 28px
+		top: 50%
+		margin-top: -16px
+		left: 50%
+		margin-left: -17px
+		//background: red
+
+	&__i
+		width: 38px
+		height: 3px
+		background: #fff
+		position: absolute
+		right: 0
+		+transition-duration($animation-time)
+		+transform-origin(left, center)
+
+	&__i_top
+		 
+			
+	&.is-open &__i_top
+		top: -1px
+		+rotate(45deg)
+
+	&__i_middle
+		top: 13px
+		right: 0
+	&.is-open &__i_middle
+		right: -15px
+		+opacity(0)
+
+	&__i_bottom
+		bottom: 0
+		
+	&.is-open &__i_bottom
+		bottom: -1px
+		+rotate(-45deg)
+
+/* nav-control
+/* ---------------------------------------END--- */
+
+
+
+
+
+/* table
+/* --------------------------------------------- */
+
+.table 
+	
+	width: 100%
+	border: none
+	max-width: 908px
+	margin: auto
+	margin-bottom: 68px
+
+	&_space-bottom_less
+		margin-bottom: 30px
+
+	&.small-only
+		display: none
+		+max-screen($mq_sm)
+			display: table
+
+	&.large-only
+		+max-screen($mq_sm)
+			display: none
+
+	&.small-only
+		border: 1px solid #dfdfdf
+		margin-bottom: 20px
+		&:first-child
+			display: none
+		&:last-child
+			margin-bottom: 30px
+
+	&__h td,
+	th,
+	thead th
+		text-transform: uppercase
+		font-weight: bold
+		border-bottom: none
+		text-align: left
+		text-align: center
+
+		&:first-child
+			text-align: left
+
+	& th,
+	& td
+		vertical-align: middle
+		padding: 13px 0
+		border-bottom: 1px dashed #dfdfdf
+
+	&.small-only th,
+	&.small-only td
+		padding-left: 10px
+		padding-right: 10px
+		text-align: left
+	
+
+	.st-key
+		width: 40%
+
+	.st-val
+		width: 60%
+
+	&.small-only
+		tr
+			&:first-child
+				td
+					font-weight: bold
+
+	&__separator
+		td
+			padding: 16px 0
+			background: url("../img/separator_big.png") center center no-repeat
+			border-bottom: none
+		&_color-main
+			td
+				background: url("../img/separator_big_color-main.png") center center no-repeat
+
+			
+			
+
+	tr
+		&:last-child
+			td
+				border-bottom: none
+
+
+	&_second-td-bold
+		tr
+			td
+				&:last-child
+					font-weight: bold
+				
+		
+
+
+/* table
+/* ---------------------------------------END--- */
+
+
+/* svg-icons
+/* --------------------------------------------- */
+
+#svg-icons
+	position: absolute
+	top: 0
+	left: 0
+	height: 0
+	width: 0
+	z-index: -100
+
+
+/* svg-icons
+/* ---------------------------------------END--- */
+
+
+/* promo
+/* --------------------------------------------- */
+
+.promo
+	margin: 0 auto
+	width: 100%
+	max-width: 1920px
+	height: 0
+	padding-top: ((841/1920)* 100%)
+	background: url("../img/bg.jpg") 0 0 no-repeat
+	background-size: contain
+	+min-screen($page_w_big)
+		padding-top: 0
+		height: 841px
+
+/* promo
+/* ---------------------------------------END--- */
+
+
+
+
+
+
+
