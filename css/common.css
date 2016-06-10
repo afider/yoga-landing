@@ -539,42 +539,6 @@ h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 
 /* Headers */
 /* ---------------------------------------END--- */
-/* fonts */
-/* --------------------------------------------- */
-@font-face {
-  font-family: "PT Sans";
-  src: url("../fonts/PTS55F_W.eot");
-  src: url("../fonts/PTS55F_W.eot?#iefix") format("embedded-opentype"), url("../fonts/PTS55F_W.woff") format("woff"), url("../fonts/PTS55F_W.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "PT Sans";
-  src: url("../fonts/PTS75F_W.eot");
-  src: url("../fonts/PTS75F_W.eot?#iefix") format("embedded-opentype"), url("../fonts/PTS75F_W.woff") format("woff"), url("../fonts/PTS75F_W.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal;
-}
-@font-face {
-  font-family: "PT Sans";
-  src: url("../fonts/PTS56F_W.eot");
-  src: url("../fonts/PTS56F_W.eot?#iefix") format("embedded-opentype"), url("../fonts/PTS56F_W.woff") format("woff"), url("../fonts/PTS56F_W.ttf") format("truetype");
-  font-weight: normal;
-  font-style: italic;
-}
-@font-face {
-  font-family: "PT Sans";
-  src: url("../fonts/PTS76F_W.eot");
-  src: url("../fonts/PTS76F_W.eot?#iefix") format("embedded-opentype"), url("../fonts/PTS76F_W.woff") format("woff"), url("../fonts/PTS76F_W.ttf") format("truetype");
-  font-weight: bold;
-  font-style: italic;
-}
-.font-r {
-  font-family: "Verdana", Arial, sans-serif;
-}
-
-/* fonts */
-/* ---------------------------------------END--- */
 /* Links */
 /* --------------------------------------------- */
 a, .u {
@@ -675,6 +639,10 @@ input:-ms-input-placeholder {
   box-sizing: border-box;
 }
 
+.main-nav:before, .trans-button_bg:before, .panel:before {
+  background: rgba(0, 102, 153, 0.75);
+}
+
 /* clearfix */
 /* --------------------------------------------- */
 .main-nav:before, .main-nav:after {
@@ -737,7 +705,7 @@ input:-ms-input-placeholder {
   height: 0;
   padding-top: 28.125%;
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1920px) {
   .page__bg-section {
     padding-top: 0;
     height: 360px;
@@ -979,7 +947,6 @@ input:-ms-input-placeholder {
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(0, 102, 153, 0.75);
 }
 .main-nav.is-animate {
   -moz-transition-property: opacity, visibility, margin-right;
@@ -1324,6 +1291,7 @@ input:-ms-input-placeholder {
 /* promo */
 /* --------------------------------------------- */
 .promo {
+  position: relative;
   margin: 0 auto;
   width: 100%;
   max-width: 1920px;
@@ -1332,12 +1300,199 @@ input:-ms-input-placeholder {
   background: url("../img/bg.jpg") 0 0 no-repeat;
   background-size: contain;
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1920px) {
   .promo {
     padding-top: 0;
     height: 841px;
   }
 }
+@media screen and (max-width: 840px) {
+  .promo {
+    padding-top: 0;
+    height: 360px;
+    background-size: cover;
+    background-position: 60% 0;
+  }
+}
+.promo__body {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  color: #99cccc;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+  flex-direction: column;
+}
+@media screen and (max-width: 999px) {
+  .promo__body {
+    align-items: flex-start;
+    padding-left: 30px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .promo__body {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+.promo__header {
+  font-size: 3.4vw;
+  text-align: center;
+  padding-top: 4%;
+  font-family: Arial, sans-serif;
+  margin-bottom: 15px;
+}
+@media screen and (max-width: 999px) {
+  .promo__header {
+    text-align: left;
+  }
+}
+@media screen and (max-width: 840px) {
+  .promo__header {
+    font-size: 18px;
+    font-size: 1.8rem;
+  }
+}
+.promo__sub-h {
+  color: #fff;
+  font-size: 2.1vw;
+}
+@media screen and (max-width: 840px) {
+  .promo__sub-h {
+    font-size: 18px;
+    font-size: 1.8rem;
+  }
+}
 
 /* promo */
+/* ---------------------------------------END--- */
+/* trans-button */
+/* --------------------------------------------- */
+.trans-button {
+  font-size: 24px;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 10px 14px;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  border-radius: 2px;
+  -moz-transition-property: border-color, color;
+  -o-transition-property: border-color, color;
+  -webkit-transition-property: border-color, color;
+  transition-property: border-color, color;
+  -moz-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+@media screen and (max-width: 900px) {
+  .trans-button {
+    font-size: 17px;
+    font-size: 1.7rem;
+    padding: 6px 10px;
+  }
+}
+.trans-button_bg:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+.trans-button:hover {
+  color: #fcc504;
+  border-color: #fcc504;
+}
+
+/* trans-button */
+/* ---------------------------------------END--- */
+/* panel */
+/* --------------------------------------------- */
+.panel {
+  width: 300px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
+  padding: 20px 0;
+}
+.panel:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+@media screen and (max-width: 1320px) {
+  .panel {
+    width: 250px;
+  }
+}
+.panel__body {
+  text-align: center;
+  font-size: 18px;
+  font-size: 1.8rem;
+  line-height: 1.2;
+}
+@media screen and (max-width: 1320px) {
+  .panel__body {
+    font-size: 15px;
+    font-size: 1.5rem;
+  }
+}
+.panel__h {
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 1320px) {
+  .panel__h {
+    margin-bottom: 10px;
+  }
+}
+.panel__h_price {
+  font-size: 33px;
+  font-size: 3.3rem;
+}
+@media screen and (max-width: 1320px) {
+  .panel__h_price {
+    font-size: 22px;
+    font-size: 2.2rem;
+  }
+}
+.panel__link {
+  color: #fff;
+  border-color: white;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+.panel__link:visited {
+  color: #fff;
+  border-color: white;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+.panel__link:hover {
+  color: #fcc504;
+  border-color: #fee89b;
+  border-color: rgba(252, 197, 4, 0.3);
+}
+
+/* panel */
 /* ---------------------------------------END--- */

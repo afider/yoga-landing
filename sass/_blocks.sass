@@ -1,6 +1,9 @@
 %bszbb
 	@include box-sizing(border-box)
 
+%trans
+	background: rgba($main_color, .75)
+
 
 /* clearfix
 /* --------------------------------------------- */
@@ -305,7 +308,8 @@
 		right: 0
 		bottom: 0
 		left: 0
-		background: rgba($main_color, .75)
+		@extend %trans
+		
 
 	// animation only when clicking navigate button
 	// not when the window reiszes
@@ -598,6 +602,7 @@
 /* --------------------------------------------- */
 
 .promo
+	position: relative
 	margin: 0 auto
 	width: 100%
 	max-width: 1920px
@@ -609,12 +614,144 @@
 		padding-top: 0
 		height: 841px
 
+	+max-screen($promo_fix-h)
+		padding-top: 0
+		height: 360px
+		background-size: cover
+		background-position: 60% 0
+
+	&__body
+		position: absolute
+		top: 0
+		right: 0
+		left: 0
+		bottom: 0
+		color: $color_h
+		display: flex
+		align-items: center
+		z-index: 1
+		flex-direction: column
+		+max-screen($promo_left)
+			align-items: flex-start
+			padding-left: 30px
+			padding-left: $page_space
+			padding-right: $page_space
+		+max-screen($mq_sm)
+			padding-left: $page_space_sm
+			padding-right: $page_space_sm
+
+	&__header
+		font-size: 3.4vw
+		text-align: center
+		padding-top: 4%
+		font-family: $font_second
+		margin-bottom: 15px
+		+max-screen($promo_left)
+			text-align: left
+		+max-screen($promo_fix-h)
+			+rem(font-size, 18px)
+
+	&__sub-h
+		color: #fff
+		font-size: 2.1vw
+		+max-screen($promo_fix-h)
+			+rem(font-size, 18px)
+
+
 /* promo
 /* ---------------------------------------END--- */
 
 
+/* trans-button
+/* --------------------------------------------- */
+
+.trans-button
+	+rem(font-size, 24px)
+	text-transform: uppercase
+	color: #fff
+	border: 2px solid #fff
+	padding: 10px 14px
+	display: inline-block
+	cursor: pointer
+	position: relative
+	border-radius: 2px
+	+transition-property(border-color, color)
+	+transition-duration($animation-time)
+	+transition-timing-function(ease-out)
+	+max-screen($button_m)
+		+rem(font-size, 17px)
+		padding: 6px 10px
+
+	&_bg
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			@extend %trans
+			z-index: -1
+
+	&:hover
+		color: $second_color
+		border-color: $second_color
 
 
+
+/* trans-button
+/* ---------------------------------------END--- */
+
+/* panel
+/* --------------------------------------------- */
+
+.panel
+	width: 300px
+	position: relative
+	display: flex
+	align-items: center
+	justify-content: center
+	flex-direction: column
+	color: #fff
+	padding: 20px 0
+
+	&:before
+		content: ''
+		display: block
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		@extend %trans
+		z-index: -1
+
+	+max-screen($panel_m)
+		width: 250px
+
+	&__body
+		text-align: center
+		+rem(font-size, 18px)
+		line-height: 1.2
+		+max-screen($panel_m)
+			+rem(font-size, 15px)
+
+	&__h
+		margin-bottom: 20px
+		+max-screen($panel_m)
+			margin-bottom: 10px
+
+		&_price
+			+rem(font-size, 33px)
+			+max-screen($panel_m)
+				+rem(font-size, 22px)
+
+	&__link
+		+link-color ($color: #fff, $color_visited: none)
+
+/* panel
+/* ---------------------------------------END--- */
 
 
 
