@@ -434,7 +434,7 @@ ol li {
   position: relative;
   display: block;
   padding: 0 0 0 18px;
-  margin-bottom: 14px;
+  margin-bottom: 5px;
   list-style-type: none;
 }
 .list-bullet li:before {
@@ -528,12 +528,19 @@ h2, .h2 {
 h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   font-size: 20px;
   font-size: 2rem;
+  color: #666;
+  text-align: left;
+  margin-bottom: 10px;
+  margin-top: 0;
 }
-@media screen and (max-width: 840px) {
-  h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-    font-size: 15px;
-    font-size: 1.5rem;
-  }
+
+h4, .h4, h5, .h5, h6, .h6 {
+  font-size: 16px;
+  font-size: 1.6rem;
+  color: #666;
+  text-align: left;
+  margin-bottom: 10px;
+  margin-top: 0;
 }
 
 /* Headers */
@@ -1543,6 +1550,7 @@ input:-ms-input-placeholder {
   color: #006699;
   margin: 0 0 10px 0;
   padding: 0;
+  text-align: center;
 }
 .icon-teasers__icon {
   width: 60px;

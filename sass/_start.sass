@@ -30,7 +30,7 @@ ol li
 		position: relative
 		display: block
 		padding: 0 0 0 18px
-		margin-bottom: 14px
+		margin-bottom: 5px
 		list-style-type: none
 
 		&:before
@@ -112,8 +112,18 @@ ol li
 
 #{headings(3, 6)}
 	+rem(font-size, 20px)
-	+max-screen($fix-font-h)
-		+rem(font-size, 15px)
+	color: $text_color
+	text-align: left
+	margin-bottom: 10px
+	margin-top: 0
+
+#{headings(4, 6)}
+	+rem(font-size, 16px)
+	color: $text_color
+	text-align: left
+	margin-bottom: 10px
+	margin-top: 0
+
 
 
 /* Headers
