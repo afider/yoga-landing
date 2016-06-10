@@ -436,34 +436,50 @@
 	z-index: 2
 	top: 34px
 	right: 10px
-	width: $navigation_h_sm
+	width: $navigation_w_sm
 	height: $navigation_h_sm
 	//background: yellow
 	cursor: pointer
 	+max-screen($mq_m_menu)
 		display: block
-		top: 2px
+		top: 10px
 	+max-screen($mq_sm)
-		top: 2px
-		
+		top: 10px
+
+
+	&:before
+		display: block
+		content: ''
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		@extend %trans
+		+transition-property(left, visibility, margin-right)
+		+transition-timing-function()
+		+transition-duration(.1s)
+
+	&.is-animate:before
+		left: 100%
 
 	&.is-open
 		position: fixed
 		top: 34px
 		z-index: 100
 		+max-screen($mq_m_menu)
-			top: 2px
+			top: 10px
 		+max-screen($mq_sm)
-			top: 2px
+			top: 10px
 
 	&__body
 		position: absolute
 		width: 38px
 		height: 28px
 		top: 50%
-		margin-top: -16px
+		margin-top: -15px
 		left: 50%
-		margin-left: -17px
+		margin-left: -19px
 		//background: red
 
 	&__i

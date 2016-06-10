@@ -645,7 +645,7 @@ input:-ms-input-placeholder {
   box-sizing: border-box;
 }
 
-.main-nav:before, .trans-button_bg:before, .panel:before {
+.main-nav:before, .nav-control:before, .trans-button_bg:before, .panel:before {
   background: rgba(0, 102, 153, 0.75);
 }
 
@@ -1133,20 +1133,40 @@ input:-ms-input-placeholder {
   z-index: 2;
   top: 34px;
   right: 10px;
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 53px;
   cursor: pointer;
 }
 @media screen and (max-width: 960px) {
   .nav-control {
     display: block;
-    top: 2px;
+    top: 10px;
   }
 }
 @media screen and (max-width: 700px) {
   .nav-control {
-    top: 2px;
+    top: 10px;
   }
+}
+.nav-control:before {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -moz-transition-property: left, visibility, margin-right;
+  -o-transition-property: left, visibility, margin-right;
+  -webkit-transition-property: left, visibility, margin-right;
+  transition-property: left, visibility, margin-right;
+  -moz-transition-duration: 0.1s;
+  -o-transition-duration: 0.1s;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+}
+.nav-control.is-animate:before {
+  left: 100%;
 }
 .nav-control.is-open {
   position: fixed;
@@ -1155,12 +1175,12 @@ input:-ms-input-placeholder {
 }
 @media screen and (max-width: 960px) {
   .nav-control.is-open {
-    top: 2px;
+    top: 10px;
   }
 }
 @media screen and (max-width: 700px) {
   .nav-control.is-open {
-    top: 2px;
+    top: 10px;
   }
 }
 .nav-control__body {
@@ -1168,9 +1188,9 @@ input:-ms-input-placeholder {
   width: 38px;
   height: 28px;
   top: 50%;
-  margin-top: -16px;
+  margin-top: -15px;
   left: 50%;
-  margin-left: -17px;
+  margin-left: -19px;
 }
 .nav-control__i {
   width: 38px;
