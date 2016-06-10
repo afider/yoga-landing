@@ -68,26 +68,7 @@
 	&__section
 		@extend %center
 		@extend %space
-
-	&__bg-section
-		height: 360px
-		background-attachment: fixed
-		background-size: cover
-		background-position: center center
-
-		width: 100%
-		max-width: 1920px
-		height: 0
-		padding-top: ((360/1280)* 100%)
-		+min-screen($page_w_big)
-			padding-top: 0
-			height: 360px
-		+max-screen($mq_sm)
-			height: 192px
-			padding-top: 0
-		+max-screen($mq_smr)
-			height: 150px
-			padding-top: 0
+		margin-bottom: 30px
 
 
 	&__footer
@@ -96,6 +77,45 @@
 
 	
 /* page
+/* ---------------------------------------END--- */
+
+
+/* bg-section
+/* --------------------------------------------- */
+
+.bg-section
+	position: relative
+	background-attachment: fixed
+	background-size: cover
+	background-position: center center
+	width: 100%
+	max-width: 1920px
+	height: 0
+	padding-top: ((360/1280)* 100%)
+	+min-screen($page_w_big)
+		padding-top: 0
+		height: 360px
+	+max-screen($mq_sm)
+		height: 192px
+		padding-top: 0
+	+max-screen($mq_smr)
+		height: 150px
+		padding-top: 0
+
+	&__body
+		position: absolute
+		top: 0
+		right: 0
+		left: 0
+		bottom: 0
+		color: $color_h
+		display: flex
+		align-items: center
+		justify-content: center
+		z-index: 1
+
+
+/* bg-section
 /* ---------------------------------------END--- */
 
 
@@ -603,7 +623,7 @@
 
 .promo
 	position: relative
-	margin: 0 auto
+	margin: 0 auto 30px auto
 	width: 100%
 	max-width: 1920px
 	height: 0
@@ -755,3 +775,39 @@
 
 
 
+/* icon-teasers
+/* --------------------------------------------- */
+
+.icon-teasers
+	display: flex
+	flex-wrap: wrap
+	padding-top: 20px
+	+max-screen($icon-teasers_line)
+		display: block
+
+	&__i
+		width: (100%/3)
+		text-align: center
+		padding: 0 2%
+		box-sizing: border-box
+		+max-screen($icon-teasers_line)
+			width: auto
+			margin-bottom: 30px
+
+
+	&__h
+		color: $main_color
+		margin: 0 0 10px 0
+		padding: 0
+		
+
+	&__icon
+		width: 60px
+		height: 60px
+		color: $main_color
+		margin-bottom: 20px
+		+max-screen($icon-teasers_line)
+			margin-bottom: 10px
+
+/* icon-teasers
+/* ---------------------------------------END--- */
