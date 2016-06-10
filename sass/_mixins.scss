@@ -114,12 +114,12 @@
 				@if $children != null {
 
 					#{$children} {
-						@include transition-duration(.1s);
+						@include transition-duration($animation-time_fast);
 					}
 
 				} @else {
 
-					@include transition-duration(.1s);
+					@include transition-duration($animation-time_fast);
 				}
 				
 			}

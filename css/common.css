@@ -574,10 +574,10 @@ a:visited, .u:visited {
   border-color: rgba(180, 14, 180, 0.3);
 }
 a:hover, .u:hover {
-  -moz-transition-duration: 0.1s;
-  -o-transition-duration: 0.1s;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
   color: #fcc504;
   border-color: #fee89b;
   border-color: rgba(252, 197, 4, 0.3);
