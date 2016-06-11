@@ -4,10 +4,13 @@ html
 body
 	background: #fff
 	color: $text_color
-	+rem(font-size, 15px)
+	+rem(font-size, 16px)
 	line-height: 1.5
 	font-family: $font_main
 
+img
+	max-width: 100%
+	height: auto
 
 p
 	margin: 0 0 $content_bot_space 0
@@ -97,6 +100,7 @@ ol li
 	font-family: $font_second
 	text-align: center
 	color: $color_h
+	font-weight: normal
 
 #{headings(1, 1)}
 	font-size: 4.4vw
@@ -106,7 +110,8 @@ ol li
 
 #{headings(2, 2)}
 	font-size: 3vw
-	margin-bottom: 25px
+	margin-top: 0
+	margin-bottom: 30px
 	+max-screen($fix-font-h)
 		+rem(font-size, 26px)
 
