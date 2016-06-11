@@ -150,8 +150,7 @@ function goToElement () {
 	var nav = $('.js-nav');
 	var navControl = $('.js-nav__control');
 	var navPhone = $('.js-nav__phone');
-	var navH = nav.height();
-
+	var navH = 40;
 
 	$(".js-goto").click(function(e) {
 
