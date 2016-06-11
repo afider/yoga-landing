@@ -27,6 +27,8 @@ function detectIfScroll () {
 	var scrolledState = 'is-scrolled';
 	var menuItems = $('.main-nav__i');
 	var activeState = 'is-active';
+	var hiddenState = 'is-hidden';
+	var goToTopButton = $('.go-to-top');
 
 	//var posOfAbout = ( $('.page').length > 0 ) ? $('.page').offset().top - 150 : 0;
 	var posOfProgramm = ( $('.gothere-programm').length > 0 ) ? $('.gothere-programm').offset().top - 150 : 0;
@@ -42,6 +44,13 @@ function detectIfScroll () {
 	var docH = $(document).height();
 
 
+	if (scrollFromTop > 150) { // go-to-top display\hide 
+
+		goToTopButton.removeClass(hiddenState);
+	} else	{
+
+		goToTopButton.addClass(hiddenState);
+	}
 
 	if (scrollFromTop > 0) {
 

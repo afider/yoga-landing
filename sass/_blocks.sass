@@ -905,3 +905,66 @@ textarea.input
 
 /* contacts
 /* ---------------------------------------END--- */
+
+
+/* go-to-top
+/* --------------------------------------------- */
+
+.go-to-top
+	z-index: 100
+	width: 60px
+	height: 60px
+	border: 3px solid $main_color
+	position: fixed
+	bottom: 20px
+	right: 20px
+	cursor: pointer
+	border-radius: 50%
+	+transition-property(opacity)
+	+transition-duration($animation-time)
+
+	&:after
+		content: ''
+		display: block
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		background: #fff
+		opacity: 0.45
+		border-radius: 50%
+		+transition-property(opacity)
+		+transition-duration($animation-time)
+
+	&:hover
+		&:after
+			opacity: 1
+
+	&:before
+		z-index: 1
+		content: ''
+		display: block
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		width: 0
+		height: 0
+		border-style: solid
+		border-width: 0 9px 15px 9px
+		border-color: transparent transparent $main_color transparent
+		+max-screen($mq_smr)
+			border-width: 0 6px 10px 6px
+
+	&.is-hidden
+		opacity: 0
+
+	+max-screen($mq_smr)
+		width: 40px
+		height: 40px
+		border-width: 2px
+
+
+/* go-to-top
+/* ---------------------------------------END--- */

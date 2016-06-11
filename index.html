@@ -227,7 +227,7 @@
 				</div>
 				
 
-				<!-- <div class="map">
+				<div class="map">
 					
 					<script src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
 					<div id="map" style="width: 100%; height: 360px"></div>
@@ -237,8 +237,8 @@
 					
 					    function init(){     
 					        myMap = new ymaps.Map ("map", {
-					            center: [61.005417252086865,69.02838799999996],
-					            zoom: 15
+					            center: [51.625986078503786,85.67388749999998],
+					            zoom: 13
 					        }),
 								
 						    myMap.controls
@@ -249,27 +249,27 @@
 						        // Стандартный набор кнопок
 						       .add('mapTools', { left: 35, top: 5 }),
 								
-					        myPlacemark2 = new ymaps.Placemark([61.005417252086865,69.02838799999996], {
+					        myPlacemark2 = new ymaps.Placemark([51.625986078503786,85.67388749999998], {
 					            // Свойства.
-					            //hintContent: ''
+					            hintContent: 'село Камлак'
 					        }, {
 					            // Опции.
 					            // Своё изображение иконки метки.
-					            //iconImageHref: 'images/map-icon.png',
+					            iconImageHref: 'img/map-icon.svg',
 					            // Размеры метки.
-					            //iconImageSize: [45, 61],
+					            iconImageSize: [26, 36],
 					            // Смещение левого верхнего угла иконки относительно
 					            // её "ножки" (точки привязки).
-					            //iconImageOffset: [0, 0]
-					        });
+					            iconImageOffset: [-26, -36]
+							});
 								
 						    // Добавляем все метки на карту.
 						    myMap.geoObjects
-						        .add(myPlacemark2)
+						        .add(myPlacemark2);
 								
 					    }
 					</script>
-				</div> -->
+				</div>
 
 				<div class="page__section gothere-leaders">
 					
@@ -568,6 +568,8 @@
 			</footer>
 			
 		</div>
+
+		<div class="go-to-top js-goto" data-goto=".page"></div>
 
 	</body>
 
