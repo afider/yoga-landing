@@ -34,13 +34,13 @@
 						<div class="main-nav js-nav">
 							<div class="main-nav__body">
 								<ul class="main-nav__lst">
-									<li class="main-nav__i"><a href="#" class="main-nav__a js-goto" data-goto=".page">Программа</a></li>
-									<li class="main-nav__i"><a href="#" class="main-nav__a js-goto" data-goto=".page">Mесто</a></li>
-									<li class="main-nav__i"><a href="#" class="main-nav__a js-goto" data-goto=".page">Ведущие</a></li>
-									<li class="main-nav__i"><a href="#" class="main-nav__a js-goto" data-goto=".page">Стоимость</a></li>
-									<li class="main-nav__i"><a href="#" class="main-nav__a js-goto" data-goto=".page">Участвую!</a></li>
-									<li class="main-nav__i"><a href="#" class="main-nav__a js-goto" data-goto=".page">Вопросы</a></li>
-									<li class="main-nav__i"><a href="#" class="main-nav__a js-goto" data-goto=".page">Контакты</a></li>
+									<li class="main-nav__i"><a href="#" class="main-nav__a js-goto" data-goto=".gothere-programm">Программа</a></li>
+									<li class="main-nav__i"><a href="#" class="main-nav__a js-goto" data-goto=".gothere-location">Mесто</a></li>
+									<li class="main-nav__i"><a href="#" class="main-nav__a js-goto" data-goto=".gothere-leaders">Ведущие</a></li>
+									<li class="main-nav__i"><a href="#" class="main-nav__a js-goto" data-goto=".gothere-price">Стоимость</a></li>
+									<li class="main-nav__i"><a href="#" class="main-nav__a js-goto" data-goto=".gothere-yes-i-do">Участвую!</a></li>
+									<li class="main-nav__i"><a href="#" class="main-nav__a js-goto" data-goto=".gothere-questions">Вопросы</a></li>
+									<li class="main-nav__i"><a href="#" class="main-nav__a js-goto" data-goto=".gothere-contacts">Контакты</a></li>
 								</ul>
 							</div>
 						</div>
@@ -67,9 +67,9 @@
 							<div class="panel__body">
 								<div class="panel__h">Стоимость на человека</div>
 								<div class="panel__h panel__h_price">28 000 рублей</div>
-								<div class="panel__h">Все включено: <a href="#" class="panel__link">подробнее</a></div>
+								<div class="panel__h">Все включено: <a href="#" class="panel__link js-goto" data-goto=".gothere-about">подробнее</a></div>
 								
-								<div class="trans-button">
+								<div class="trans-button js-goto" data-goto=".gothere-yes-i-do">
 									Участвую!
 								</div>
 							</div>
@@ -79,7 +79,7 @@
 					</div>
 				</div>
 
-				<div class="page__section">
+				<div class="page__section gothere-about">
 					
 					<h2>О туре</h2>
 
@@ -118,13 +118,13 @@
 
 				<div class="bg-section" style="background-image: url(img/section-1.jpg)">
 					<div class="bg-section__body">
-						<div class="trans-button trans-button_bg">
+						<div class="trans-button trans-button_bg js-goto" data-goto=".gothere-yes-i-do">
 							Участвую!
 						</div>
 					</div>
 				</div>
 
-				<div class="page__section">
+				<div class="page__section gothere-programm">
 					
 					<h2>Программа</h2>
 					
@@ -185,13 +185,13 @@
 
 				<div class="bg-section" style="background-image: url(img/section-2.jpg)">
 					<div class="bg-section__body">
-						<div class="trans-button trans-button_bg">
+						<div class="trans-button trans-button_bg js-goto" data-goto=".gothere-yes-i-do">
 							Участвую!
 						</div>
 					</div>
 				</div>
 				
-				<div class="page__section">
+				<div class="page__section gothere-location">
 					
 					<h2>Место</h2>
 					
@@ -271,7 +271,7 @@
 					</script>
 				</div> -->
 
-				<div class="page__section">
+				<div class="page__section gothere-leaders">
 					
 					<h2>Ведущие</h2>
 
@@ -292,14 +292,14 @@
 
 				<div class="bg-section" style="background-image: url(img/section-3.jpg)">
 					<div class="bg-section__body">
-						<div class="trans-button trans-button_bg">
+						<div class="trans-button trans-button_bg js-goto" data-goto=".gothere-yes-i-do">
 							Участвую!
 						</div>
 					</div>
 				</div>
 
 
-				<div class="page__section">
+				<div class="page__section gothere-price">
 
 					<h2>Стоимость</h2>
 					
@@ -332,13 +332,13 @@
 
 				<div class="bg-section" style="background-image: url(img/section-4.jpg)">
 					<div class="bg-section__body">
-						<div class="trans-button trans-button_bg">
+						<div class="trans-button trans-button_bg js-goto" data-goto=".gothere-yes-i-do">
 							Участвую!
 						</div>
 					</div>
 				</div>
 
-				<div class="page__section">
+				<div class="page__section gothere-yes-i-do">
 
 					<h2>Участвую!</h2>
 
@@ -408,13 +408,13 @@
 
 				<div class="bg-section" style="background-image: url(img/section-5.jpg)">
 					<div class="bg-section__body">
-						<div class="trans-button trans-button_bg">
+						<div class="trans-button trans-button_bg js-goto" data-goto=".gothere-yes-i-do">
 							Участвую!
 						</div>
 					</div>
 				</div>
 
-				<div class="page__section">
+				<div class="page__section gothere-questions">
 
 					<h2>Вопросы</h2>
 
@@ -465,8 +465,9 @@
 
 				<div class="page__section">
 
-						
-					<table class="table table_responsive table_second-td-bold table_space-bottom_less">
+					<h2>Это пример таблицы</h2>
+
+					<table class="table table_responsive">
 						<thead>
 							<tr>
 								<th>Опция</th>
@@ -518,37 +519,50 @@
 			</div><!-- page__body -->
 
 
-			<footer class="page__footer footer">
+			<footer class="page__footer footer gothere-contacts">
 				<div class="footer__body">
 
 					<h2>Контакты</h2>
 
-					Если у вас возникли вопросы, пожалуйста задавайте!
+					<p class="footer__dark txt-to-center">Если у вас возникли вопросы, пожалуйста задавайте!</p>
 
-Наши телефоны:
-
-
-Электронная почта:
-
-
-Мы Вконтакте:
-
-
-Группа тура Вконтакте:
-
-
-+7(903)293-54-86 Сергей
-+7(905)736-07-68 Наталья
-
-katasonov_s@mail.ru
-nataly.mail@bk.ru
-
-vk.com/idkatasonov_s
-vk.com/id_znata
-
-vk.com/altaiyogatour
-
-
+					<div class="contacts">
+						<div class="contacts__i">
+							<div class="contacts__label">
+								<span class="footer__dark">Наши телефоны:</span>
+							</div>
+							<div class="contacts__body">
+								<a href="tel:+7(903)293-54-86" class="dashed">+7(903)293-54-86</a> Сергей<br>
+								<a href="tel:+7(905)736-07-68" class="dashed">+7(905)736-07-68</a> Наталья
+							</div>
+						</div>
+						<div class="contacts__i">
+							<div class="contacts__label">
+								<span class="footer__dark">Электронная почта:</span>
+							</div>
+							<div class="contacts__body">
+								<a href="mailto:katasonov_s@mail.ru" class="dashed">katasonov_s@mail.ru</a> <br>
+								<a href="mailto:nataly.mail@bk.ru" class="dashed">nataly.mail@bk.ru</a>
+							</div>
+						</div>
+						<div class="contacts__i">
+							<div class="contacts__label">
+								<span class="footer__dark">Мы Вконтакте:</span>
+							</div>
+							<div class="contacts__body">
+								<a href="vk.com/idkatasonov_s">vk.com/idkatasonov_s</a> <br>
+								<a href="vk.com/id_znata">vk.com/id_znata</a>
+							</div>
+						</div>
+						<div class="contacts__i">
+							<div class="contacts__label">
+								<span class="footer__dark">Группа тура Вконтакте:</span>
+							</div>
+							<div class="contacts__body">
+								<a href="vk.com/altaiyogatour">vk.com/altaiyogatour</a>
+							</div>
+						</div>
+					</div>
 					
 				</div>
 			</footer>

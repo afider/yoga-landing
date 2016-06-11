@@ -4,8 +4,7 @@ $(function() {
 	document.getElementById('svg-icons').innerHTML = SVG_ICONS;
 
 	animateNavigation ();
-	//goToElement ();
-	//setMenuActive ();
+	goToElement ();
 	detectIfScroll();
 
 	// инициализация плагина для адаптивных таблиц
@@ -29,10 +28,15 @@ function detectIfScroll () {
 	var menuItems = $('.main-nav__i');
 	var activeState = 'is-active';
 
-	var posOfAbout = $('.page').offset().top - 150;
-	var posOfPromo = $('.promo').offset().top - 150;
-	var posOfPortfolio = $('#portfolio').offset().top - 150;
-	var posOfFeedback = $('#feedback').offset().top - 150;
+	//var posOfAbout = ( $('.page').length > 0 ) ? $('.page').offset().top - 150 : 0;
+	var posOfProgramm = ( $('.gothere-programm').length > 0 ) ? $('.gothere-programm').offset().top - 150 : 0;
+	var posOfLocation = ( $('.gothere-location').length > 0 ) ? $('.gothere-location').offset().top - 150 : 0;
+	var posOfLeaders = ( $('.gothere-leaders').length > 0 ) ? $('.gothere-leaders').offset().top - 150 : 0;
+	var posOfPrice = ( $('.gothere-price').length > 0 ) ? $('.gothere-price').offset().top - 150 : 0;
+	var posOfYesIDo = ( $('.gothere-yes-i-do').length > 0 ) ? $('.gothere-yes-i-do').offset().top - 150 : 0;
+	var posOfQuestions = ( $('.gothere-questions').length > 0 ) ? $('.gothere-questions').offset().top - 150 : 0;
+	var posOfContacts = ( $('.gothere-contacts').length > 0 ) ? $('.gothere-contacts').offset().top - 150 : 0;
+
 
 	var wH = $(window).height();
 	var docH = $(document).height();
@@ -42,39 +46,65 @@ function detectIfScroll () {
 	if (scrollFromTop > 0) {
 
 		targetBlock.addClass( scrolledState );
+		menuItems.removeClass( activeState );
 	} else	{
 
 		targetBlock.removeClass( scrolledState );
 	}
 
 
-	if (scrollFromTop > posOfAbout) {
+	if (scrollFromTop > posOfProgramm) {
 
 		menuItems.removeClass( activeState );
 		menuItems.eq(0).addClass( activeState );
 		
 	}
 
-	if (scrollFromTop > posOfPromo) {
+
+	if (scrollFromTop > posOfLocation) {
 
 		menuItems.removeClass( activeState );
 		menuItems.eq(1).addClass( activeState );
 		
-	}
+	}	
 
 
-	if (scrollFromTop > posOfPortfolio) {
+	if (scrollFromTop > posOfLeaders) {
 
 		menuItems.removeClass( activeState );
 		menuItems.eq(2).addClass( activeState );
 		
-	}
+	}	
 
-	console.log(scrollFromTop + wH, docH);
-	if (scrollFromTop > posOfFeedback || scrollFromTop + wH == docH) {
+
+	if (scrollFromTop > posOfPrice) {
 
 		menuItems.removeClass( activeState );
 		menuItems.eq(3).addClass( activeState );
+		
+	}	
+
+
+	if (scrollFromTop > posOfYesIDo) {
+
+		menuItems.removeClass( activeState );
+		menuItems.eq(4).addClass( activeState );
+		
+	}
+
+
+	if (scrollFromTop > posOfQuestions) {
+
+		menuItems.removeClass( activeState );
+		menuItems.eq(5).addClass( activeState );
+		
+	}
+
+
+	if (scrollFromTop > posOfContacts || scrollFromTop + wH == docH) {
+
+		menuItems.removeClass( activeState );
+		menuItems.eq(6).addClass( activeState );
 		
 	}
 
@@ -120,6 +150,7 @@ function goToElement () {
 	var nav = $('.js-nav');
 	var navControl = $('.js-nav__control');
 	var navPhone = $('.js-nav__phone');
+	var navH = nav.height();
 
 
 	$(".js-goto").click(function(e) {
@@ -139,29 +170,10 @@ function goToElement () {
 
 
 	    $('html, body').stop().animate({
-	        scrollTop: target.offset().top - 140
+	        scrollTop: target.offset().top - (navH + 10)
 	        
 	    }, speed, 'easeInOutCubic');
 	});
 
 } // goToElement
-
-
-function setMenuActive () {
-
-	var menuItems = $('.main-nav__i');
-	var activeState = 'is-active';
-	
-
-	menuItems.on('click', function(event) {
-		event.preventDefault();
-		
-		menuItems.removeClass( activeState );
-		var self = $(this);
-
-		self.addClass( activeState );
-	});
-	
-
-} // setMenuActive
 
