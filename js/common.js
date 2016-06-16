@@ -16,7 +16,7 @@ $(function() {
 		maxSlides: 1,
 		slideMargin: 0,
 		auto: true,
-		pause: 22000,
+		pause: 5000,
 		speed: 1000,
 		autoHover: true
 
