@@ -582,43 +582,24 @@ textarea.input
 /* --------------------------------------------- */
 
 .promo
-	position: relative
-	margin: 0 auto 30px auto
-	width: 100%
-	max-width: 1920px
-	height: 0
-	padding-top: ((841/1920)* 100%)
-	background: url("../img/bg.jpg") 0 0 no-repeat
-	background-size: contain
-	+min-screen($page_w_big)
-		padding-top: 0
-		height: 841px
-
-	+max-screen($promo_fix-h)
-		padding-top: 0
-		height: 360px
-		background-size: cover
-		background-position: 60% 0
-
-	&__body
-		position: absolute
-		top: 0
-		right: 0
-		left: 0
-		bottom: 0
-		color: $color_h
-		display: flex
-		align-items: center
-		z-index: 1
-		flex-direction: column
-		+max-screen($promo_left)
-			align-items: flex-start
-			padding-left: 30px
-			padding-left: $page_space
-			padding-right: $page_space
-		+max-screen($mq_sm)
-			padding-left: $page_space_sm
-			padding-right: $page_space_sm
+	position: absolute
+	top: 0
+	right: 0
+	left: 0
+	bottom: 0
+	color: $color_h
+	display: flex
+	align-items: center
+	z-index: 101
+	flex-direction: column
+	+max-screen($promo_left)
+		align-items: flex-start
+		padding-left: 30px
+		padding-left: $page_space
+		padding-right: $page_space
+	+max-screen($mq_sm)
+		padding-left: $page_space_sm
+		padding-right: $page_space_sm
 
 	&__header
 		font-size: 3.4vw
@@ -626,6 +607,7 @@ textarea.input
 		margin-top: 50px
 		font-family: $font_second
 		margin-bottom: 15px
+		position: relative
 		+max-screen($promo_left)
 			text-align: left
 		+max-screen($promo_fix-h)
@@ -967,4 +949,149 @@ textarea.input
 
 
 /* go-to-top
+/* ---------------------------------------END--- */
+
+
+
+/* slider
+/* --------------------------------------------- */
+
+.slider
+	max-width: $page_w_big
+	margin: auto
+	margin-bottom: 30px
+	position: relative
+
+	&__lst
+		margin: 0
+		padding: 0
+		list-style-type: none
+		
+	&__i
+		margin: 0
+		padding: 0
+		position: relative
+		background-size: contain
+		+max-screen($promo_fix-h)
+			height: 360px !important
+			background-size: cover
+			background-position: 60% 0
+		
+
+	&__body
+		position: absolute
+		top: 0
+		bottom: 0
+		right: 0
+		left: 0
+		margin: auto
+		z-index: 2
+
+	&__img
+		display: block
+		max-width: 100%
+		height: auto
+		visibility: hidden
+
+	.bx-wrapper .bx-viewport
+		+max-screen($promo_fix-h)
+			height: 360px !important
+			background-size: cover
+			background-position: 60% 0
+
+	
+	.bx-wrapper .bx-prev,
+	.bx-wrapper .bx-next
+		position: absolute
+		top: 0
+		bottom: 0
+		width: 20%
+		z-index: 102
+		overflow: hidden
+		text-indent: -999px
+		//background: red
+		display: block
+		+max-screen($promo_left)
+			display: none
+
+		&:hover .slider__prev,
+		&:hover .slider__next
+			opacity: 1
+
+		.slider__prev,
+		.slider__next
+			opacity: 0.45
+			color: $main_color
+			display: block !important
+			width: 90px
+			height: 100px
+			position: absolute
+			top: 50%
+			margin-top: -50px
+			z-index: 1000
+			+transition-property(opacity)
+			+transition-duration($animation-time)
+		.slider__prev
+			+rotate(180deg)
+			left: 20px
+		.slider__next
+			right: 20px
+
+	.bx-wrapper .bx-prev
+		left: 0
+	.bx-wrapper .bx-next
+		right: 0
+
+	.bx-wrapper .bx-controls,
+	.bx-wrapper .bx-controls-direction
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+
+	.bx-wrapper .bx-controls-direction
+		
+	.bx-wrapper .bx-pager
+		text-align: center
+		width: 100%
+		position: absolute
+		top: 100%
+		margin-top: -50px
+		left: 0
+		right: 0
+		height: 50px
+		z-index: 102
+		+max-screen($promo_fix-h)
+			text-align: right
+		+max-screen($mq_smr)
+			text-align: left
+			padding-left: 10px
+			margin-top: -40px
+
+		.bx-pager-item
+			display: inline-block
+			position: relative
+			top: 10px
+
+		.bx-pager-link
+			@extend %bszbb
+			display: inline-block
+			width: 20px
+			height: 20px
+			margin: 0 10px
+			border-radius: 50%
+			border: none
+			background: $color_h
+			+transition-property(background)
+			+transition-duration($animation-time)
+			overflow: hidden
+			text-indent: -999px
+			font-size: 0
+
+		.active,
+		.bx-pager-link:hover
+			background: $main_color_light
+
+/* slider
 /* ---------------------------------------END--- */

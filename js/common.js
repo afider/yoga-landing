@@ -10,6 +10,18 @@ $(function() {
 	// инициализация плагина для адаптивных таблиц
 	$('.table_responsive').cardtable();
 
+	$('.js-slider').bxSlider({
+		mode: 'fade',
+		minSlides: 1,
+		maxSlides: 1,
+		slideMargin: 0,
+		auto: true,
+		pause: 22000,
+		speed: 1000,
+		autoHover: true
+
+	});
+
 
 	window.onscroll = function() {
 
